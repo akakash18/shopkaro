@@ -1,8 +1,18 @@
 const express = require("express");
-const { getAllJeweleryProducts } = require("./jewelery.controller");
+const {
+  createJProduct,
+  getAllJProducts,
+  getJProductById,
+  updateJProduct,
+  deleteJProduct,
+} = require("./jewelery.controller");
 
-const jeweleryRouter = express.Router();
+const jeweleryRoutes = express.Router();
 
-jeweleryRouter.use("/", getAllJeweleryProducts);
+jeweleryRoutes.post("/", createJProduct);
+jeweleryRoutes.get("/", getAllJProducts);
+jeweleryRoutes.get("/:id", getJProductById);
+jeweleryRoutes.put("/:id", updateJProduct);
+jeweleryRoutes.delete("/:id", deleteJProduct);
 
-module.exports = jeweleryRouter;
+module.exports = jeweleryRoutes;

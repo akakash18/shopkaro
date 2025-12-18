@@ -3,7 +3,7 @@ const cors = require("cors");
 const electronicsRoutes = require("./src/routes/electronicsRoutes/electronics.routes");
 const mensRouter = require("./src/routes/mensRoutes/mens.routes");
 const womensRouter = require("./src/routes/womensRoutes/womens.routes");
-const jeweleryRouter = require("./src/routes/jeweleryRoutes/jewelery.routes")
+const jeweleryRoutes = require("./src/routes/jeweleryRoutes/jewelery.routes")
 
 const app = express();
 
@@ -17,6 +17,6 @@ app.get("/", (req, res) => {
 app.use("/electronics", electronicsRoutes);
 app.use("/mens", mensRouter);
 app.use("/womens", womensRouter);
-app.use("/jewelery", jeweleryRouter);
+app.use("/jewelery", jeweleryRoutes);
 
 module.exports = app;

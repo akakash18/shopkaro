@@ -1,9 +1,18 @@
 const express = require("express");
-const {getAllElectronicsProducts} = require("./electronics.controller")
+const {
+  createEProduct,
+  getAllEProducts,
+  getEProductById,
+  updateEProduct,
+  deleteEProduct,
+} = require("./electronics.controller");
 
 const electronicsRoutes = express.Router();
 
-electronicsRoutes.get("/",getAllElectronicsProducts);
+electronicsRoutes.post("/", createEProduct);
+electronicsRoutes.get("/", getAllEProducts);
+electronicsRoutes.get("/:id", getEProductById);
+electronicsRoutes.put("/:id", updateEProduct);
+electronicsRoutes.delete("/:id", deleteEProduct);
 
 module.exports = electronicsRoutes;
-

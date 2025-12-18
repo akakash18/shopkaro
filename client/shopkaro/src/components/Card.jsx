@@ -5,7 +5,7 @@ export default function Card({ product }) {
       <p>{product.title}</p>
       <p>{product.category}</p>
       <p>{product.price}</p>
-      <p>{product.rating.rate}</p>
+      {/* <p>{product.rating.rate}</p> */}
     </div>
   );
 }
